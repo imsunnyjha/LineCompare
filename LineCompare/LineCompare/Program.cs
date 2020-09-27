@@ -8,18 +8,34 @@ namespace LineCompare
         { 
             Console.WriteLine("Welcome To Line Comparison Computation Problem!");
 
-            Console.WriteLine("Enter the X,Y co-ordinates of the line: ");
+            Console.WriteLine("Enter the X,Y co-ordinates of the first line: ");
 
             double pointX1 = Convert.ToDouble(Console.ReadLine());
             double pointY1 = Convert.ToDouble(Console.ReadLine());
             double pointX2 = Convert.ToDouble(Console.ReadLine());
             double pointY2 = Convert.ToDouble(Console.ReadLine());
 
-            //Power Calculation for Co-Ordinate Points
-             double powerP = Math.Pow(pointX2 - pointX1, 2);
-             double powerQ = Math.Pow(pointY2 - pointY1, 2);
+            Console.WriteLine("Enter the X,Y co-ordinates of the second line: ");
 
-             Console.WriteLine(Math.Sqrt(powerP + powerQ));
+            double pointP1 = Convert.ToDouble(Console.ReadLine());
+            double pointQ1 = Convert.ToDouble(Console.ReadLine());
+            double pointP2 = Convert.ToDouble(Console.ReadLine());
+            double pointQ2 = Convert.ToDouble(Console.ReadLine());
+
+            //Power Calculation for Co-Ordinate Points
+            double powerP = Math.Pow(pointX2 - pointX1, 2) + Math.Pow(pointY2 - pointY1, 2);
+            double powerX = Math.Pow(pointP2 - pointP1, 2) + Math.Pow(pointQ2 - pointQ1, 2);
+            
+
+            double firstLine = Math.Sqrt(powerP);
+            double secondLine = Math.Sqrt(powerX);
+
+            //Passing double as string
+            String line1 = Convert.ToString(firstLine);
+            String line2 = Convert.ToString(secondLine);
+
+            //Checking whether two lines are equal
+            Console.WriteLine(line1.Equals(line2));
         }
     }
 }
