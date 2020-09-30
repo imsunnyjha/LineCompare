@@ -4,10 +4,8 @@ namespace LineCompare
 {
     class Program
     {
-        static void Main(string[] args)
-        { 
-            Console.WriteLine("Welcome To Line Comparison Computation Problem!");
-
+        public void ComputeLineLength()
+        {
             //Input for firstLine
             Console.WriteLine("Enter the X,Y co-ordinates of the first line: ");
 
@@ -27,7 +25,7 @@ namespace LineCompare
             //Power Calculation for Co-Ordinate Points
             double powerP = Math.Pow(pointX2 - pointX1, 2) + Math.Pow(pointY2 - pointY1, 2);
             double powerX = Math.Pow(pointP2 - pointP1, 2) + Math.Pow(pointQ2 - pointQ1, 2);
-            
+
             //Length Calculation
             double firstLine = Math.Sqrt(powerP);
             double secondLine = Math.Sqrt(powerX);
@@ -45,6 +43,13 @@ namespace LineCompare
 
             //Comparing two lines
             Console.WriteLine(line1.CompareTo(line2));
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome To Line Comparison Computation Problem!");
+
+            Program computeLineLength = new Program();
+            computeLineLength.ComputeLineLength();
         }
     }
 }
